@@ -10,15 +10,9 @@ describe('Reducer', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  describe('Submit todo', () => {
+  describe('Delete todo', () => {
     it('Should return the correct state', () => {
-      const action = {
-        type: types.SUBMIT_TODO,
-        id: 1,
-        text: todoText,
-      };
-
-      const expectedState = {
+      const startingState = {
         todos: [
           {
             id: 1,
@@ -27,7 +21,16 @@ describe('Reducer', () => {
         ],
       };
 
-      expect(reducer(undefined, action)).toEqual(expectedState);
+      const action = {
+        type: types.DELETE_TODO,
+        id: 1,
+      };
+
+      const expectedState = {
+        todos: [],
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
     });
   });
 });
