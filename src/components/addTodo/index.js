@@ -13,6 +13,7 @@ const AddTodo = ({ submitTodo }) => {
           input.value = '';
         }}
       >
+
         <input
           className="todo-input"
           ref={(element) => {

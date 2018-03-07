@@ -12,9 +12,9 @@ const actions = {
     return {
       type: types.SUBMIT_TODO,
       id: nextId(),
-      text
-    }
-  }
+      text,
+    };
+  },
 };
 
 export default actions;
